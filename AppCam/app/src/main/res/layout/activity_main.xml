@@ -9,19 +9,35 @@
     android:weightSum="10"
     tools:context="com.example.daniellacerda.appcam.MainActivity">
 
-    <android.support.v7.widget.AppCompatImageView
-        android:id="@+id/imageView"
+    <FrameLayout
+        android:id="@+id/FrameView"
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_weight="9"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent" />
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <VideoView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom|center"
+            android:padding="5dp"
+            android:id="@+id/videoView"
+            android:visibility="gone"/>
+
+    </FrameLayout>
 
     <Button
         android:id="@+id/btnCamera"
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
         android:background="@android:color/holo_red_dark"
         android:textColor="@android:color/white"
         android:text="Camera"/>

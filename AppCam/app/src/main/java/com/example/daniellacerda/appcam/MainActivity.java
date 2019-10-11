@@ -19,7 +19,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         Button btnCamera = (Button) findViewById(R.id.btnCamera);
+        Button btnVideo = (Button) findViewById(R.id.btnVideo);
         imageView = (ImageView) findViewById(R.id.imageView);
 
         btnCamera.setOnClickListener(new View.OnClickListener() {
@@ -29,6 +32,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 0);
             }
         });
+        btnVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+                startActivityForResult(intent, 0);
+            }
+        });
+
     }
 
     @Override
